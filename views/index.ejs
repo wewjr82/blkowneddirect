@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <title>Directory</title>
+    <link rel="shortcut icon" href="images/default.png" type="image/png">
+  </head>
+  <body>
+    <header>
+      <img src="images/cover.png" alt="" />
+    </header>
+
+    <h1>Add Your Business</h1>
+
+    <form action="/addYourBusiness" method="post">
+      <fieldset>
+        <legend>Submit Business Info</legend>
+        <div class="container">
+          <input
+            type="text"
+            placeholder="Name of business"
+            name="businessName"
+          />
+
+          <br /><br />
+          <label for="industry">Industry:</label>
+          <select name="industry" required>
+            <option>--Select--</option>
+            <option value="aerospace">Aerospace</option>
+            <option value="agriculture">Agriculture</option>
+            <option value="computer">Computer</option>
+            <option value="education">Education</option>
+            <option value="electronics">Electronics</option>
+            <option value="energy">Energy</option>
+            <option value="food">Food</option>
+            <option value="healthcare">Healthcare</option>
+            <option value="hospitality">Hospitality</option>
+            <option value="manufacturing">Manufacturing</option>
+            <option value="mining">Mining</option>
+            <option value="music">Music</option>
+            <option value="news media">News Media</option>
+            <option value="pharmaceutical">Pharmaceutical</option>
+            <option value="telecommunication">Telecommunication</option>
+            <option value="transport">Transport</option>
+            <option value="world wide web">World Wide Web</option>
+          </select>
+          <br /><br />
+
+          <input
+            type="url"
+            placeholder="https://example.com"
+            size="30"
+            required
+            name="webSite"
+          />
+
+          <br /><br />
+          <input
+            type="tel"
+            placeholder="Phone Number"
+            required
+            name="businessPhone"
+          />
+          <br /><br />
+          <input type="text" placeholder="Address" name="businessAddress" />
+          <br /><br />
+          <input type="text" placeholder="City" name="businessCity" />
+          <br /><br />
+          <input type="text" placeholder="State" name="businessState" />
+          <br /><br />
+          <input
+            type="text"
+            placeholder="Zip"
+            pattern="[0-9]*"
+            name="businessZip"
+          />
+          <br />
+          <br />
+          <input id="button" type="submit" />
+        </div>
+
+        <p id="info">
+         It's not popular to purchase Black. Customers of color want to support businesses that are run and owned by people of color. Furthermore, ethical shoppers who are actively working to alter the landscape want to spend money with you. Add your business to our business directory, which specializes in listing and promoting BLACK EXCELLENCE, you can make it simple for them to find you. If you're a business owner and are simply interested in what Virginia has to offer in terms of black ownership, feel free to discover the ideal places to dine, work, and relax.
+        </p>
+      </fieldset>
+    </form>
+
+    <!-- Virginia-->
+
+    <h2>Directory</h2>
+    <br />
+    <!-- <form action="/filter" method="post">
+      <label for="filter">Filter by City</label>
+
+      <select id="city" name="city">
+        <option value="">Select City</option>
+
+        <option value="Chesapeake">Chesapeake</option>
+
+        <option value="Hampton">Hampton</option>
+
+        <option value="Norfolk">Norfolk</option>
+        <option value="Newport News">Newport News</option>
+
+        <option value="Portsmouth">Portsmouth</option>
+
+        <option value="Suffolk">Suffolk</option>
+
+        <option value="Virginia Beach">Virginia Beach</option>
+      </select>
+      <input type="button" value="submit" />
+    </form> -->
+
+    <ul>
+      <% for(var i = 0; i < businesses.length; i++) {%>
+      <li>
+        
+        <span><%= businesses[i].name %></span><br />
+        <span><%= businesses[i].industry %></span><br />
+        <span><%= businesses[i].webSite %></span><br />
+        <span><%= businesses[i].phone %></span><br />
+        <span><%= businesses[i].address %></span><br />
+        <span><%= businesses[i].city %></span><br />
+        <span><%= businesses[i].state %></span><br />
+        <span><%= businesses[i].zipCode %></span><br />
+        
+           <!-- <span class='fa fa-trash'></span>  -->
+      </li>
+      <% } %>
+    </ul>
+
+    <footer>
+      <div id="copyright" align="center">
+        &copy; 2022 - 2022 www.blackowneddirect.com
+      </div>
+      <script>
+        (function () {
+          let cpr = document.getElementById("copyright");
+          cpr.innerHTML =
+            "&copy; 2022 - " +
+            new Date().getFullYear() +
+            " www.blackowneddirect.com - All Rights Reserved.";
+        })();
+      </script>
+    </footer>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
